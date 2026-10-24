@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DMLOperations {
+public class InsertOperations {
 
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
         // Register a Driver
@@ -22,7 +22,8 @@ public class DMLOperations {
 		System.out.println("Connection Established");
 		
 		//Prepare SQL Query
-		String insertQuery="insert into students values(2,'bhanu',90);";
+		String insertQuery="insert into students values(7,'manikanta',86);";
+		
 		
 		//create a statement
 		Statement statement=connection.createStatement();
