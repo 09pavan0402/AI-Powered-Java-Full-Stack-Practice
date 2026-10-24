@@ -1,7 +1,7 @@
 CREATE DATABASE sqlcommands_db;
 USE sqlcommands_db;
 
--- DDL Commands -- 
+-- DDL Commands 
 -- Example for creating a Table using CREATE command
 CREATE TABLE student (
 stu_id integer,
@@ -23,3 +23,5 @@ RENAME TABLE student to students;
 
 DROP TABLE students;
 DROP DATABASE jfs;
+
+truncate students;
