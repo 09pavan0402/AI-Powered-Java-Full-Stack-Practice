@@ -1,8 +1,9 @@
 package com;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Scanner;
 
 import com.utils.DBConnections;
@@ -16,9 +17,13 @@ public class login {
 		System.out.println("Enter password");
 		String userPassword=sc.nextLine();
 		
-		Statement statement=DBConnections.getStatement();
+		Connection connection=DBConnections.createConnection();
+		
 		try {
-			ResultSet rs=statement.executeQuery("select * from users where user_name='"+userName+"' and user_password ='"+userPassword+"'");
+			PreparedStatement prepareStatement=connection.prepareStatement("select * from users where user_name=? and user_password =?");
+			prepareStatement.setString(1, userName);
+			prepareStatement.setString(2, userPassword);
+			ResultSet rs=prepareStatement.executeQuery();
 			if(rs.next()) {
 				System.out.println("You're login");
 			}else {
