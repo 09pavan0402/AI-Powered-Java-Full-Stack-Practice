@@ -3,6 +3,7 @@ package com.util;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import com.entity.Car;
 import com.entity.Product;
 
 
@@ -13,6 +14,7 @@ public class HibernateUtil {
 			Configuration cfg=new Configuration();
 			cfg.configure("Hibernate.cfg.xml");
 			cfg.addAnnotatedClass(Product.class);
+			cfg.addAnnotatedClass(Car.class);
 			sessionFactory =cfg.buildSessionFactory();
 			return sessionFactory;
 		}
