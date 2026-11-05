@@ -5,10 +5,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name="products")
+//@NamedQuery(name="allproducts", query="from Product")
+@NamedQueries({@NamedQuery(name="allproducts", query="from Product"),@NamedQuery(name="singleproduct",query="from Product where productId=?1")})
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
