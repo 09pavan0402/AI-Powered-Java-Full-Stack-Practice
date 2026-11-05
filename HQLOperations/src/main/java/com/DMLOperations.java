@@ -12,7 +12,7 @@ public class DMLOperations {
 		SessionFactory sessionFactory=HibernateUtil.getSessionFactory();
 		Session session=sessionFactory.openSession();
 		session.beginTransaction();
-		Product product1=new Product("Washing Machine",1,50000);
+		Product product1=new Product("Washing Machine",2,60000);
 		Product product2=new Product("AC",2,80000);
 		session.persist(product1);
 		session.persist(product2);
