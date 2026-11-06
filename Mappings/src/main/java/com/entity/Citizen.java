@@ -3,6 +3,7 @@ package com.entity;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -19,7 +20,7 @@ public class Citizen {
 	private int age;
 	
 //	@OneToOne(cascade = CascadeType.PERSIST)
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name="aadhar_id")
 	private Aadhar aadhar;
 	public Citizen() {
@@ -63,6 +64,6 @@ public class Citizen {
 	}
 	@Override
 	public String toString() {
-		return "Citizen [citizenId=" + citizenId + ", name=" + name + ", age=" + age + ", aadhar=" + aadhar + "]";
+		return "Citizen [citizenId=" + citizenId + ", name=" + name + ", age=" + age + "]";
 	}
 }

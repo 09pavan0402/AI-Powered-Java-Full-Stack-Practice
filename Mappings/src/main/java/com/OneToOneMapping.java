@@ -24,6 +24,7 @@ public class OneToOneMapping {
 //		System.out.println(aadhar.getCitizen());
 		Citizen citizen = session.find(Citizen.class, 2);
 		System.out.println(citizen);
+		System.out.println(citizen.getAadhar());
 		session.getTransaction().commit();
 	}
 }
