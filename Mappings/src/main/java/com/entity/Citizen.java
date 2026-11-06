@@ -18,12 +18,11 @@ public class Citizen {
 	private String name;
 	private int age;
 	
-	@JoinColumn(name="aadhar_id")
 //	@OneToOne(cascade = CascadeType.PERSIST)
 	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="aadhar_id")
 	private Aadhar aadhar;
 	public Citizen() {
-		super();
 	}
 	public Citizen(String name, int age, Aadhar aadhar) {
 		super();

@@ -17,6 +17,11 @@ public class OneToOneMapping {
 //		Citizen citizen=new Citizen("pandu",30,aadhar);
 //		session.persist(aadhar);
 //		session.persist(citizen);
+//		Citizen citizen = session.find(Citizen.class, 2);
+//		System.out.println(citizen);
+//		Aadhar aadhar = session.find(Aadhar.class, 2);
+//		System.err.println(aadhar);
+//		System.out.println(aadhar.getCitizen());
 		Citizen citizen = session.find(Citizen.class, 2);
 		System.out.println(citizen);
 		session.getTransaction().commit();
