@@ -4,7 +4,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import com.entity.Aadhar;
 import com.entity.Citizen;
+import com.entity.Department;
 import com.entity.Order;
+import com.entity.Student;
 import com.entity.User;
 
 public class HibernateUtil {
@@ -17,6 +19,8 @@ public class HibernateUtil {
 			cfg.addAnnotatedClass(Aadhar.class);
 			cfg.addAnnotatedClass(User.class);
 			cfg.addAnnotatedClass(Order.class);
+			cfg.addAnnotatedClass(Department.class);
+			cfg.addAnnotatedClass(Student.class);
 			sessionFactory =cfg.buildSessionFactory();
 			return sessionFactory;
 		}
